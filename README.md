@@ -1,2 +1,2 @@
 # lit-image-preview
-web-image-preview component build with lint
+web-image-preview component build with lit
