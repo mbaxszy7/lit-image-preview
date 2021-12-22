@@ -1,0 +1,39 @@
+{
+  "name": "lit-image-preview",
+  "version": "0.0.1",
+  "description": "web-image-preview component build with lit",
+  "main": "dist/image-preview.es.js",
+  "exports": {
+    ".": "./dist/image-preview.es.js"
+  },
+  "types": "types/image-preview.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "lit": "^2.0.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4",
+    "vite": "^2.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbaxszy7/lit-image-preview.git"
+  },
+  "keywords": [
+    "web-components",
+    "lit"
+  ],
+  "author": "frank yan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mbaxszy7/lit-image-preview/issues"
+  },
+  "homepage": "https://github.com/mbaxszy7/lit-image-preview#readme"
+}
