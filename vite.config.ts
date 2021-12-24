@@ -5,7 +5,7 @@ export default defineConfig({
   build: {
     target: "esnext",
     lib: {
-      entry: "src/image-preview.ts",
+      entry: "src/index.ts",
       formats: ["es"],
     },
     rollupOptions: {

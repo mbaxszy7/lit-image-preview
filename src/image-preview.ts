@@ -8,7 +8,7 @@ import { customElement, property } from "lit/decorators.js";
  * @csspart button - The button
  */
 @customElement("image-preview")
-export class MyElement extends LitElement {
+export default class MyElement extends LitElement {
   static styles = css`
     :host {
       display: block;
@@ -36,6 +36,7 @@ export class MyElement extends LitElement {
       <button @click=${this._onClick} part="button">
         Click Count: ${this.count}
       </button>
+
       <slot></slot>
     `;
   }
