@@ -1,12 +1,16 @@
 {
   "name": "lit-image-preview",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "web-image-preview component build with lit",
-  "main": "dist/image-preview.es.js",
+  "main": "./dist/lit-image-preview.umd.js",
+  "module": "./dist/lit-image-preview.es.js",
   "exports": {
-    ".": "./dist/image-preview.es.js"
+    ".": {
+      "import": "./dist/lit-image-preview.es.js",
+      "require": "./dist/lit-image-preview.umd.js"
+    }
   },
-  "types": "types/image-preview.d.ts",
+  "types": "types/lit-image-preview.d.ts",
   "files": [
     "dist",
     "types"

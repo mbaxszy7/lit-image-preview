@@ -1,1 +1,1 @@
-import "./image-preview";
+import "./lit-image-preview";

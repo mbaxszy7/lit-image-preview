@@ -2,7 +2,7 @@ import { html, css, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
 
-@customElement("image-modal")
+@customElement("lit-image-preview")
 export default class ImageModal extends LitElement {
   static styles = css`
     .lit-image-preview-mask {
@@ -16,9 +16,15 @@ export default class ImageModal extends LitElement {
       width: 90%;
       max-width: 1024px;
       margin: 0 auto;
-      margin-top: 28px;
+
+      position: fixed;
+      z-index: 1000;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0px);
     }
     .lit-image-preview-image {
+      overflow: auto;
       position: relative;
       padding-bottom: 56%;
       z-index: 1000;
@@ -51,10 +57,10 @@ export default class ImageModal extends LitElement {
   @state()
   private show = false;
 
-  private onPreview() {
-    this.show = !this.show;
-    console.log(this.show, "onPreview");
-  }
+  // private onPreview() {
+  //   this.show = !this.show;
+  //   console.log(this.show, "onPreview");
+  // }
 
   connectedCallback(): void {
     super.connectedCallback();
@@ -67,11 +73,22 @@ export default class ImageModal extends LitElement {
     }
   }
 
+  onMaskClick() {
+    const dry = new CustomEvent("lit-image-preview-mc", {
+      bubbles: true,
+      detail: {
+        visible: this.visible,
+      },
+    });
+
+    this.dispatchEvent(dry);
+  }
+
   render() {
     if (!this.show) return "";
     return html`
       <div class="lit-image-preview-root">
-        <div class="lit-image-preview-mask" @click=${this.onPreview}></div>
+        <div class="lit-image-preview-mask" @click=${this.onMaskClick}></div>
         <div class="lit-image-preview-wrap">
           <div class="lit-image-preview-image">
             <img
@@ -88,5 +105,11 @@ export default class ImageModal extends LitElement {
         </div>
       </div>
     `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "lit-image-preview": ImageModal;
   }
 }

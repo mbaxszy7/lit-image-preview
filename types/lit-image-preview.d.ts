@@ -5,8 +5,13 @@ export default class ImageModal extends LitElement {
     showWithAnimation: boolean;
     visible: boolean;
     private show;
-    private onPreview;
     connectedCallback(): void;
     willUpdate(_changedProperties: Map<string | number | symbol, unknown>): void;
+    onMaskClick(): void;
     render(): "" | import("lit-html").TemplateResult<1>;
+}
+declare global {
+    interface HTMLElementTagNameMap {
+        "lit-image-preview": ImageModal;
+    }
 }
