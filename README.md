@@ -2,6 +2,10 @@
 
 web-image-preview component build with lit
 
+# install
+
+npm i lit-image-preview
+
 # usage
 
 ```html
